@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+@CrossOrigin(origins="*")
 @RestController
 public class GetBeerList {
 	
@@ -18,7 +19,7 @@ public class GetBeerList {
 	@Autowired
 	private BeerRepository beerRepo;
 	
-	@CrossOrigin(origins="http://localhost:3000")
+	
 	@GetMapping("/getBeerList")
 	public List<Beer> getBeerList(@RequestParam("breweryName") String breweryName)
 	{
